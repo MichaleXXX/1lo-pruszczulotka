@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LO Pruszcz Gdański</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e3f2fd;
+            position: relative;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        h1 {
+            color: #1565c0;
+        }
+        .profile {
+            margin: 20px 0;
+            padding: 15px;
+            background: #bbdefb;
+            border-radius: 5px;
+        }
+        .profile h2 {
+            color: #0d47a1;
+            cursor: pointer;
+        }
+        .profile h2::before {
+            content: "▶ ";
+        }
+        .profile-details {
+            display: none;
+            text-align: left;
+            padding-top: 10px;
+        }
+        .btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: #1565c0;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            width: fit-content;
+        }
+        .btn:hover {
+            background: #0d47a1;
+        }
+        .school-image {
+            width: 70%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .logo-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .source {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #1565c0;
+        }
+    </style>
+    <script>
+        function toggleDetails(id, element) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+                element.querySelector("h2").innerHTML = "▼ " + element.querySelector("h2").innerText.slice(2);
+            } else {
+                details.style.display = "none";
+                element.querySelector("h2").innerHTML = "▶ " + element.querySelector("h2").innerText.slice(2);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>I Liceum Ogólnokształcące im. Marii Konopnickiej w Pruszczu Gdańskim</h1>
+        <img src="szkola.png" alt="Budynek szkoły" class="school-image">
+        <p>Nasza szkoła oferuje różnorodne profile klasowe dopasowane do zainteresowań uczniów.</p>
+        <p>Szkoła znajduje się na ulicy Juliana Ursyna Niemczewicza 1 w Pruszczu Gdańskim.</p>
+        <p>Dni otwarte odbędą się 8 kwietnia o 10:00 – serdecznie zapraszamy!</p>
+        
+        <div class="profile" onclick="toggleDetails('details1A', this)">
+            <h2>▶ Klasa A - Matematyczno-Informatyczna</h2>
+            <p>Idealna dla uczniów zainteresowanych przedmiotami ścisłymi i nowoczesnymi technologiami.</p>
+            <div id="details1A" class="profile-details">
+                <p>Przedmioty rozszerzone: matematyka, informatyka, geografia/fizyka.</p>
+                <p>Robotyka w klasie II i III.</p>
+                <p>Języki: angielski, niemiecki.</p>
+                <p>Przedmioty punktowane: język polski, matematyka, język angielski, geografia lub fizyka.</p>
+				<p>Możliwe Kierunki Studiów: Informatyka, Inżynieria, Matematyka, Automatyka i Robotyka.</p>
+            </div>
+        </div>
+        
+        <div class="profile" onclick="toggleDetails('details1B', this)">
+            <h2>▶ Klasa B - Humanistyczna</h2>
+            <p>Doskonały wybór dla miłośników literatury, historii i nauk społecznych.</p>
+            <div id="details1B" class="profile-details">
+                <p>Przedmioty rozszerzone: język polski, historia, język angielski.</p>
+                <p>Przedmiot uzupełniający: bezpieczeństwo publiczne w klasach I-III.</p>
+                <p>Języki: angielski, niemiecki.</p>
+                <p>Przedmioty punktowane: język polski, matematyka, język angielski, historia.</p>
+				<p>Możliwe Kierunki Studiów: Prawo, Dziennikarstwo, Filologia, Politologia.</p>
+				
+            </div>
+        </div>
+        
+        <div class="profile" onclick="toggleDetails('details1C', this)">
+            <h2>▶ Klasa C - Biologiczno-Chemiczna</h2>
+            <p>Najlepsza opcja dla przyszłych lekarzy, biologów i chemików.</p>
+            <div id="details1C" class="profile-details">
+                <p>Przedmioty rozszerzone: biologia, chemia, język angielski.</p>
+                <p>Języki: angielski, niemiecki.</p>
+                <p>Przedmioty punktowane: język polski, matematyka, język angielski, biologia lub chemia.</p>
+				<p>Możliwe Kierunki Studiów: Medycyna, Biotechnologia, Farmacja, Weterynaria.</p>
+            </div>
+        </div>
+        
+        <div class="logo-container">
+            <a href="https://liceum.zso1.pl/" target="_blank"><img src="logo.jpg" alt="Logo szkoły"></a>
+            <a href="https://www.facebook.com/liceum.jedynka.pruszcz/" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+        </div>
+        
+        <a href="https://liceum.zso1.pl/" class="btn" target="_blank">Odwiedź stronę szkoły</a>
+        <p class="source">Źródło: <a href="https://liceum.zso1.pl/strona-z-aktualosciami/page/9/" target="_blank">liceum.zso1.pl</a></p>
+    </div>
+</body>
+</html>
